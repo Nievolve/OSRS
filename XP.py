@@ -19,4 +19,3 @@ def Total_Prayer_XP(a,b):
     return a*b*5
 
 
-
