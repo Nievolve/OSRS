@@ -4,7 +4,7 @@ import bones_types as b
 import XP 
 
 # Skills
-prayerLVL=49
+prayerLVL=53
 
 
 def bank():
