@@ -25,11 +25,20 @@ class sun_kissed_bones:
 class log:
     class maple:
         class fletching:
+            shortbow_xp         = 50
+            shortbow_lvl        = 50
+            longbow_xp          = 55
+            longbow_lvl         = 55
+
             class vale_totem:
                 totem_xp        = 50.8
                 decoration_xp   = 201
     class yew:
         class fletching:
+            shortbow_xp         = 67.5
+            shortbow_lvl        = 65
+            longbow_xp          = 75
+            longbow_lvl         = 75
             class vale_totem:
                 totem_xp        = 82.6
                 decoration_xp   = 326.2

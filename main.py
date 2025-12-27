@@ -2,8 +2,8 @@
 # Beräkna OSRS relaterade saker
 # 
 import XP
-import bones_types
-import bank
+import items
+
 # Programmet beräknar XP i game loop
 
 # Variablar
@@ -21,22 +21,23 @@ def prayerXP():
         blessedBoneShard= int(input(": "))
 
 
-        print(blessedBoneShard+XP.Total_Prayer_XP(bones*bones_types.bones.blessedBoneShard)+XP.Total_Prayer_XP(big_bones*bones_types.big_bones.blessedBoneShard+XP.Total_Prayer_XP(sun_kissed*bones_types.sun_kissed_bones.blessedBoneShard)))
+        print(blessedBoneShard+XP.Total_Prayer_XP(bones*items.bones.blessedBoneShard)+XP.Total_Prayer_XP(big_bones*items.big_bones.blessedBoneShard+XP.Total_Prayer_XP(sun_kissed*items.sun_kissed_bones.blessedBoneShard)))
         break
-
+def fletching():
+    pass
 # Mainloop
 while True:
     print("Banked XP Calc")
     print("""
 Choose.
           1. Calc prayer xp
+          2. Calc fletching xp
 """)
     menu = int(input("Choose"))
-    if menu==1:
+    if menu == 1:
         prayerXP()
-    elif menu==9:
-        bank.bank()
+    elif menu == 2:
+        fletching()
 
     elif menu==0:
-
         break
