@@ -19,3 +19,4 @@ def Total_Prayer_XP(a):
     return a*5 
 
 
+run = b.log.maple.fletching.vale_totem.decoration_xp*4 + b.log.maple.fletching.vale_totem.totem_xp
