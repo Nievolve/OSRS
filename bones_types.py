@@ -21,3 +21,17 @@ class sun_kissed_bones:
     prayer = 0
     blessedBoneShard = 45
     crafting = 5
+
+class log:
+    class maple:
+        class fletching:
+            class vale_totem:
+                totem_xp        = 50.8
+                decoration_xp   = 201
+    class yew:
+        class fletching:
+            class vale_totem:
+                totem_xp        = 82.6
+                decoration_xp   = 326.2
+
+                
