@@ -10,29 +10,19 @@ def XP(L):
         xp+= math.floor(l+300*2**(l/7))
     return math.floor(xp*0.25)
 
-def nuvarande_xp(current_xp, target_lvl):
-    curr_xp = current_xp 
-    work = False
-    xp_check    = 0
-    loop        = 1
-    found_level = 1
-    while not work:
-        xp_check+=math.floor(loop+300*2**(loop/7))
-        print("xp_check", xp_check)
-        print("curr_xp", curr_xp)
-        if xp_check >= curr_xp:
-            work = True
-            print("My found lvl" ,found_level)
-        else:
-            loop += loop
-            found_level += found_level
-    my_xp = XP(found_level)
-    leftover = current_xp - my_xp
-    amount_level_xp = diff_XP(my_xp,target_lvl)
-    procent = scale(leftover,XP(target_lvl)-amount_level_xp,amount_level_xp,0,100)
-    print("My leftover", leftover)
-    print("My lvl" ,my_xp)
-    print("My procent" ,procent)
+# Läser in xp total och skcikar tillbaka lvl
+def xp_to_lvl(current_xp, mode):
+    if mode == 1:
+        xp_list = []
+        xp=0
+        for l in range(1,100):        
+            xp_list.append([l,XP(l)])
+            if XP(l) > current_xp:
+                return l
+    elif mode == 2:
+        pass
+    else:
+        print("Out of range")
 
 def from_current_lvl(current_lvl, target_lvl):
     target_xp = XP(target_lvl)
@@ -69,8 +59,8 @@ def vale_totem(log, current, target_lvl):
         package = items.log.yew.fletching.vale_totem.totem_xp + (items.log.yew.fletching.vale_totem.decoration_xp*4) + (items.log.yew.fletching.shortbow_xp*4)
     
     work_xp = XP(target_lvl) - read_value
-    print(package)
-    print(work_xp)
-    print(math.ceil(work_xp/package*5,))
+    print(f"Antal {log} logs som krävs : {math.ceil(work_xp/package*5)})")
 
-vale_totem("maple",48,65)
+#vale_totem("yew",65,69)
+print(xp_to_lvl(300))
+#print(XP(99))
