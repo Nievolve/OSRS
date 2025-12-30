@@ -57,17 +57,18 @@ def Total_Prayer_XP(a):
     return a*5 
 
     ## För att räkna ut antal logs som krävs mellan nuvarande xp till ett visst mål lvl. Genom Vale Totem minigame
-def vale_totem(log, current_xp, target_lvl):
-    if current_xp < 99:
-        current = XP(current_xp)
+def vale_totem(log, current, target_lvl):
+
+    if current < 99:
+        read_value = XP(current)
     else:
-        current = current_xp
+        read_value = current
     if log == "maple":
         package = items.log.maple.fletching.vale_totem.totem_xp + (items.log.maple.fletching.vale_totem.decoration_xp*4) + (items.log.maple.fletching.longbow_xp*4)
     elif log == "yew":
         package = items.log.yew.fletching.vale_totem.totem_xp + (items.log.yew.fletching.vale_totem.decoration_xp*4) + (items.log.yew.fletching.shortbow_xp*4)
     
-    work_xp = XP(target_lvl) - current
+    work_xp = XP(target_lvl) - read_value
     print(package)
     print(work_xp)
     print(math.ceil(work_xp/package*5,))
