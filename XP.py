@@ -2,7 +2,7 @@ import math
 import items
 
 def scale(in_value, inMin, inMax, outMin, outMax):
-    return (in_value - inMin) / (inMax - inMin) * (outMax - outMin)
+    return ((outMax-outMin) / (inMax-inMin))*(in_value - inMin) + outMin
 def XP(L):
     # Funktion som tar in level och ger tillbaka kumulativ xp till den leveln
     xp=0
@@ -12,28 +12,23 @@ def XP(L):
 
 # Läser in xp total och skcikar tillbaka lvl
 def xp_to_lvl(current_xp, mode):
-    if mode == 1:
-        xp_list = []
-        xp=0
-        for l in range(1,100):        
-            xp_list.append([l,XP(l)])
-            if XP(l) > current_xp:
-                return l
-    elif mode == 2:
-        pass
-    else:
-        print("Out of range")
-
-def from_current_lvl(current_lvl, target_lvl):
-    target_xp = XP(target_lvl)
-    try_lvl= 1
-    while True:
-        print(XP(try_lvl))
-        if XP(try_lvl) >= target_xp:
-            break
+    
+    xp_list = []
+    for l in range(1,100):        
+        xp_list.append([l,XP(l)])
+        if XP(l) > current_xp and mode == 1:
+            return l
+        elif XP(l) > current_xp and mode == 2:
+            diff_XP = current_xp-XP(l)
+            scaled = scale(500, 0, 1000, 0, 100) # test
+            print(l)
+            print(scaled)
+            return l+scaled
+            
         else:
-            try_lvl += try_lvl
-    print("found lvl" ,try_lvl)
+            print("Out of range")
+
+
 def diff_XP(L1,L2):
     # Return differansen mellan L1-L2 i xp.
     # XP värde 
@@ -62,5 +57,5 @@ def vale_totem(log, current, target_lvl):
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/package*5)})")
 
 #vale_totem("yew",65,69)
-print(xp_to_lvl(300))
+print(xp_to_lvl(300, 2))
 #print(XP(99))
