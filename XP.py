@@ -12,25 +12,17 @@ def XP(L):
 
 # Läser in xp total och skcikar tillbaka lvl
 def xp_to_lvl(current_xp, mode):
-    
     xp_list = []
     for l in range(1,100):        
         xp_list.append([l,XP(l)])
         if XP(l) > current_xp and mode == 1:
-            return l
+            return l-1
         elif XP(l) > current_xp and mode == 2:
-            diff_XP = current_xp-XP(l)
-            scaled = scale(500, 0, 1000, 0, 100) # test
-            print(l)
-            print(scaled)
-            return l+scaled
+            return round((l-1)+(scale(current_xp, XP(l-1), XP(l),0,100)*0.01),2)
             
-        else:
-            print("Out of range")
-
 
 def diff_XP(L1,L2):
-    # Return differansen mellan L1-L2 i xp.
+    # Return delta xp mellan L1-L2 i xp.
     # XP värde 
     if L1>L2:
         return L1-L2
@@ -51,11 +43,11 @@ def vale_totem(log, current, target_lvl):
     if log == "maple":
         package = items.log.maple.fletching.vale_totem.totem_xp + (items.log.maple.fletching.vale_totem.decoration_xp*4) + (items.log.maple.fletching.longbow_xp*4)
     elif log == "yew":
-        package = items.log.yew.fletching.vale_totem.totem_xp + (items.log.yew.fletching.vale_totem.decoration_xp*4) + (items.log.yew.fletching.shortbow_xp*4)
+        package = items.log.yew.fletching.vale_totem.build_xp + (items.log.yew.fletching.vale_totem.decoration_xp*4) + (items.log.yew.fletching.shortbow_xp*4)
     
     work_xp = XP(target_lvl) - read_value
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/package*5)})")
 
 #vale_totem("yew",65,69)
-print(xp_to_lvl(300, 2))
+print(xp_to_lvl(1*10**6, 2))
 #print(XP(99))
