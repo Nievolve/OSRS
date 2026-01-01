@@ -43,7 +43,7 @@ class log:
             class vale_totem:
                 build_xp        = 82.6
                 decoration_xp   = 326.2
-                totem_xp        = build_xp * 4 + decoration_xp * 4
+                totem_xp        = build_xp * 4 + decoration_xp * 4 
     class magic:
         class fletching:
             shortbow_xp         =83.3

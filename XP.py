@@ -41,13 +41,12 @@ def vale_totem(log, current, target_lvl):
     else:
         read_value = current
     if log == "maple":
-        package = items.log.maple.fletching.vale_totem.totem_xp + (items.log.maple.fletching.vale_totem.decoration_xp*4) + (items.log.maple.fletching.longbow_xp*4)
+        per_log = items.log.maple.fletching.vale_totem.totem_xp/5 + items.log.maple.fletching.longbow_xp
     elif log == "yew":
-        package = items.log.yew.fletching.vale_totem.build_xp + (items.log.yew.fletching.vale_totem.decoration_xp*4) + (items.log.yew.fletching.shortbow_xp*4)
-    
+        per_log = items.log.yew.fletching.vale_totem.totem_xp/5 + items.log.yew.fletching.shortbow_xp * 4
     work_xp = XP(target_lvl) - read_value
-    print(f"Antal {log} logs som krävs : {math.ceil(work_xp/package*5)})")
+    print(f"Antal {log} logs som krävs : {math.ceil(work_xp/per_log)}")
 
-#vale_totem("yew",65,69)
-print(xp_to_lvl(1*10**6, 2))
+vale_totem("yew",65,69)
+#print(xp_to_lvl(1*10**6, 2))
 #print(XP(99))
