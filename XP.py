@@ -47,6 +47,11 @@ def vale_totem(log, current, target_lvl):
     work_xp = XP(target_lvl) - read_value
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/per_log)}")
 
-vale_totem("yew",65,69)
-#print(xp_to_lvl(1*10**6, 2))
-#print(XP(99))
+
+def main():
+    vale_totem("yew",65,69)
+    #print(xp_to_lvl(1*10**6, 2))
+    #print(XP(99))
+
+if __name__ == "__main__":
+    main()
