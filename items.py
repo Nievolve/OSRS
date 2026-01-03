@@ -1,27 +1,33 @@
 class bones:
     class bones:
-        prayerXP = 4
-        blessedBoneShard = 4
-        crafting = 5
+        class prayer:
+            bury                = 4
+            blessedBoneShard    = 4
+            crafting            = 5
         
     class big_bones:
-        prayer = 15
-        blessedBoneShard = 12
-        crafting = 5
+        class prayer:
+            bury                = 15
+            blessedBoneShard    = 12
+            crafting            = 5
 
     class baby_dragon_bones:
-        prayer = 0
-        blessedBoneShard = 24
-        crafting = 5 
+        class prayer:
+            bury                = 0
+            blessedBoneShard    = 24
+            crafting            = 5 
 
     class dragon_bones:
-        prayer = 0
-        blessedBoneShard = 58
-        crafting = 5
+        class prayer:
+            bury                = 0
+            offer_wild          = 504
+            blessedBoneShard    = 58
+            crafting            = 5
     class sun_kissed_bones:
-        prayer = 0
-        blessedBoneShard = 45
-        crafting = 5
+        class prayer:
+            bury                = 0
+            blessedBoneShard    = 45
+            crafting            = 5
 
 class log:
     class maple:
@@ -51,8 +57,8 @@ class log:
                 build_xp        =156.1
                 decoration_xp   =619.8
                 totem_xp        = build_xp* 4 + decoration_xp * 4
-                
-rs_skill_list = [
+    # Index list for OSRS offical API            
+osrs_skill_list = [
     "Overall",         # 0
     "Attack",          # 1
     "Defence",         # 2

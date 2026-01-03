@@ -1,5 +1,6 @@
 import math
 import items
+import API
 
 def scale(in_value, inMin, inMax, outMin, outMax):
     return ((outMax-outMin) / (inMax-inMin))*(in_value - inMin) + outMin
@@ -48,10 +49,10 @@ def vale_totem(log, current, target_lvl):
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/per_log)}")
 
 
-def main():
-    vale_totem("yew",65,69)
+def main():    
+    vale_totem("yew", API.get_user("Runehexen")[10][2],69)
     #print(xp_to_lvl(1*10**6, 2))
     #print(XP(99))
 
-if __name__ == "__main__":
+if __name__ == "__main__":  
     main()
