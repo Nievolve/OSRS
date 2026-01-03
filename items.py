@@ -52,3 +52,29 @@ class log:
                 decoration_xp   =619.8
                 totem_xp        = build_xp* 4 + decoration_xp * 4
                 
+rs_skill_list = [
+    "Overall",         # 0
+    "Attack",          # 1
+    "Defence",         # 2
+    "Strength",        # 3
+    "Constitution",    # 4
+    "Ranged",          # 5
+    "Prayer",          # 6
+    "Magic",           # 7
+    "Cooking",         # 8
+    "Woodcutting",     # 9
+    "Fletching",       # 10
+    "Fishing",         # 11
+    "Firemaking",      # 12
+    "Crafting",        # 13
+    "Smithing",        # 14
+    "Mining",          # 15
+    "Herblore",        # 16
+    "Agility",         # 17
+    "Thieving",        # 18
+    "Slayer",          # 19
+    "Farming",         # 20
+    "Runecrafting",    # 21
+    "Hunter",          # 22
+    "Construction",    # 23
+]

@@ -1,22 +1,21 @@
-# Use offical OSRS API to get skills/level
+# Use offical OSRS API to get skills level/xp   
 
 import requests
-def get_user(username):
-    url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws"
 
+import items
+def get_user(username):
+    empty_list = []
+    url = "https://secure.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws"
     response = requests.get(url, params={"player": username})
     response.raise_for_status()
 
     lines = response.text.splitlines()
     rows = [line.split(",") for line in lines]
-    print(lines)
     # Exempel: Attack (index 1)
-    attackRank, attackLevel, attackXp = rows[1]
-    print(f"Attack: level {attackLevel}, xp {attackXp}")
     for k in range(0,24):
-        rank, lvl, xp = rows[k]
-        print(f"{k},  : {rank} | {lvl}  | {xp}")
-
+        empty_list.append(rows[k])
+        print(f"{k},  : {items.rs_skill_list[k]} | {empty_list[k][1]} | {empty_list[k][2]}")
+    return empty_list
 def main():
     get_user("Runehexen")
 
