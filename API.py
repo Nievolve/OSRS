@@ -27,7 +27,9 @@ def get_user(username):
         ])
     return filled_list
 def main():
-    get_user("Runehexen")
+    print(get_user("Runehexen"))
+    
+    
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,5 @@
+from enum import IntEnum
+
 class bones:
     class bones:
         class prayer:
@@ -18,6 +20,7 @@ class bones:
             crafting            = 5 
 
     class dragon_bones:
+        name                    = "dragon bones"
         class prayer:
             bury                = 0
             offer_wild          = 504
@@ -58,29 +61,37 @@ class log:
                 decoration_xp   =619.8
                 totem_xp        = build_xp* 4 + decoration_xp * 4
     # Index list for OSRS offical API            
-osrs_skill_list = [
-    "Overall",         # 0
-    "Attack",          # 1
-    "Defence",         # 2
-    "Strength",        # 3
-    "Constitution",    # 4
-    "Ranged",          # 5
-    "Prayer",          # 6
-    "Magic",           # 7
-    "Cooking",         # 8
-    "Woodcutting",     # 9
-    "Fletching",       # 10
-    "Fishing",         # 11
-    "Firemaking",      # 12
-    "Crafting",        # 13
-    "Smithing",        # 14
-    "Mining",          # 15
-    "Herblore",        # 16
-    "Agility",         # 17
-    "Thieving",        # 18
-    "Slayer",          # 19
-    "Farming",         # 20
-    "Runecrafting",    # 21
-    "Hunter",          # 22
-    "Construction",    # 23
-]
+
+class osrs_skill(IntEnum):
+    OVERALL = 0
+    ATTACK = 1
+    DEFENCE = 2
+    STRENGTH = 3
+    HITPOINTS = 4
+    RANGED = 5
+    PRAYER = 6
+    MAGIC = 7
+    COOKING = 8
+    WOODCUTTING = 9
+    FLETCHING = 10
+    FISHING = 11
+    FIREMAKING = 12
+    CRAFTING = 13
+    SMITHING = 14
+    MINING = 15
+    HERBLORE = 16
+    AGILITY = 17
+    THIEVING = 18
+    SLAYER = 19
+    FARMING = 20
+    RUNECRAFTING = 21
+    HUNTER = 22
+    CONSTRUCTION = 23
+
+class skills_index(IntEnum):
+    RANK = 0
+    LEVEL = 1
+    XP = 2
+
+
+
