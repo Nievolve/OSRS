@@ -47,17 +47,25 @@ def vale_totem(log, current, target_lvl):
         per_log = items.log.yew.fletching.vale_totem.totem_xp/5 + items.log.yew.fletching.shortbow_xp * 4
     work_xp = XP(target_lvl) - read_value
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/per_log)}")
-def chaos_temple(amount):
+def chaos_temple(bone,amount):
     # Return amount XP from amount bones input
-    return items.bones.dragon_bones.prayer.offer_wild * amount
-    
+    if bone == items.bones.big_bones.name:
+        return items.bones.big_bones.prayer.offer_wild * amount
+    if bone == items.bones.dragon_bones.name:
+        return items.bones.dragon_bones.prayer.offer_wild * amount
+    if bone == items.bones.bones.name:
+        return items.bones.bones.prayer.offer_wild * amount
 
 def main():
       
     #vale_totem("yew", API.get_user("Runehexen")[10][2],69)
     #print(xp_to_lvl(1*10**6, 2))
     #print(XP(99))
-    print(xp_to_lvl(API.get_user("Runehexen")[items.osrs_skill.PRAYER][items.skills_index.XP] + chaos_temple(200),2))
+    print(xp_to_lvl
+            (API.get_user("Runehexen")[items.osrs_skill.PRAYER][items.skills_index.XP]
+            + 
+            chaos_temple(items.bones.dragon_bones.name,200),2)
+            )
 
 if __name__ == "__main__":  
     main()

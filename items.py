@@ -2,22 +2,29 @@ from enum import IntEnum
 
 class bones:
     class bones:
+        name               = "bones"
         class prayer:
+            offer_wild          = 31.4
             bury                = 4
             blessedBoneShard    = 4
-            crafting            = 5
+        class crafting:
+            chisel              =5
         
     class big_bones:
+        name                    = "big bones"
         class prayer:
             bury                = 15
+            offer_wild          = 105
             blessedBoneShard    = 12
-            crafting            = 5
-
+            
+        class crafting:
+            chisel              = 5
     class baby_dragon_bones:
         class prayer:
             bury                = 0
             blessedBoneShard    = 24
-            crafting            = 5 
+        class crafting:
+            chisel              =5
 
     class dragon_bones:
         name                    = "dragon bones"
@@ -25,12 +32,14 @@ class bones:
             bury                = 0
             offer_wild          = 504
             blessedBoneShard    = 58
-            crafting            = 5
+        class crafting:
+            chisel              =5
     class sun_kissed_bones:
         class prayer:
             bury                = 0
             blessedBoneShard    = 45
-            crafting            = 5
+        class crafting:
+            chisel              =5
 
 class log:
     class maple:

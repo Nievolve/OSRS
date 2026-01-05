@@ -11,7 +11,7 @@ def get_user(username):
     url = "https://secure.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws"
     response = requests.get(url, params={"player": username})
     response.raise_for_status()
-
+    lines = requests.get(url, params={"player": username}).text.splitlines()
     lines = response.text.splitlines()
     rows = [line.split(",") for line in lines]
     # Exempel: Attack (index 1)
