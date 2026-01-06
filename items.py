@@ -49,19 +49,14 @@ class log:
             longbow_xp          = 55
             longbow_lvl         = 55
 
-            class vale_totem:
-                totem_xp        = 50.8
-                decoration_xp   = 201
+            
     class yew:
         class fletching:
             shortbow_xp         = 67.5
             shortbow_lvl        = 65
             longbow_xp          = 75
             longbow_lvl         = 75
-            class vale_totem:
-                build_xp        = 82.6
-                decoration_xp   = 326.2
-                totem_xp        = build_xp * 4 + decoration_xp * 4 
+            
     class magic:
         class fletching:
             shortbow_xp         =83.3
@@ -71,36 +66,38 @@ class log:
                 totem_xp        = build_xp* 4 + decoration_xp * 4
     # Index list for OSRS offical API            
 
-class osrs_skill(IntEnum):
-    OVERALL = 0
-    ATTACK = 1
-    DEFENCE = 2
-    STRENGTH = 3
-    HITPOINTS = 4
-    RANGED = 5
-    PRAYER = 6
-    MAGIC = 7
-    COOKING = 8
-    WOODCUTTING = 9
-    FLETCHING = 10
-    FISHING = 11
-    FIREMAKING = 12
-    CRAFTING = 13
-    SMITHING = 14
-    MINING = 15
-    HERBLORE = 16
-    AGILITY = 17
-    THIEVING = 18
-    SLAYER = 19
-    FARMING = 20
-    RUNECRAFTING = 21
-    HUNTER = 22
-    CONSTRUCTION = 23
+class eSkills(IntEnum):
+    OVERALL         = 0
+    ATTACK          = 1
+    DEFENCE         = 2
+    STRENGTH        = 3
+    HITPOINTS       = 4
+    RANGED          = 5
+    PRAYER          = 6
+    MAGIC           = 7
+    COOKING         = 8
+    WOODCUTTING     = 9
+    FLETCHING       = 10
+    FISHING         = 11
+    FIREMAKING      = 12
+    CRAFTING        = 13
+    SMITHING        = 14
+    MINING          = 15
+    HERBLORE        = 16
+    AGILITY         = 17
+    THIEVING        = 18
+    SLAYER          = 19
+    FARMING         = 20
+    RUNECRAFTING    = 21
+    HUNTER          = 22
+    CONSTRUCTION    = 23
+    SAILING         = 24
 
-class skills_index(IntEnum):
+class eSkillIndex(IntEnum):
     RANK = 0
     LEVEL = 1
     XP = 2
 
-
+class eMode(IntEnum):
+    pass
 

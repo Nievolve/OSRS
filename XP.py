@@ -1,5 +1,6 @@
 import math
 import items
+import skilling
 import API
 
 def scale(in_value, inMin, inMax, outMin, outMax):
@@ -44,7 +45,7 @@ def vale_totem(log, current, target_lvl):
     if log == "maple":
         per_log = items.log.maple.fletching.vale_totem.totem_xp/5 + items.log.maple.fletching.longbow_xp
     elif log == "yew":
-        per_log = items.log.yew.fletching.vale_totem.totem_xp/5 + items.log.yew.fletching.shortbow_xp * 4
+        per_log = skilling.activity.vale_totem.totem_xp/5 + items.log.yew.fletching.shortbow_xp * 4 + skilling.activity.vale_totem.decoration_xp
     work_xp = XP(target_lvl) - read_value
     print(f"Antal {log} logs som krävs : {math.ceil(work_xp/per_log)}")
 def chaos_temple(bone,amount):
@@ -62,7 +63,7 @@ def main():
     #print(xp_to_lvl(1*10**6, 2))
     #print(XP(99))
     print(xp_to_lvl
-            (API.get_user("Runehexen")[items.osrs_skill.PRAYER][items.skills_index.XP]
+            (API.get_user("Runehexen")[items.eSkills.PRAYER][items.eSkillIndex.XP]
             + 
             chaos_temple(items.bones.dragon_bones.name,200),2)
             )
