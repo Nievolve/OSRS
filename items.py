@@ -1,11 +1,11 @@
-from enum import IntEnum
+
 
 class bones:
     class bones:
         name               = "bones"
         class prayer:
-            offer_wild          = 31.4
             bury                = 4
+            offer_wild          = 31.4
             blessedBoneShard    = 4
         class crafting:
             chisel              =5
@@ -43,6 +43,7 @@ class bones:
 
 class log:
     class maple:
+        name                    = "maple"
         class fletching:
             shortbow_xp         = 50
             shortbow_lvl        = 50
@@ -51,6 +52,7 @@ class log:
 
             
     class yew:
+        name                    = "yew"
         class fletching:
             shortbow_xp         = 67.5
             shortbow_lvl        = 65
@@ -58,46 +60,9 @@ class log:
             longbow_lvl         = 75
             
     class magic:
+        name                       = "magic"
         class fletching:
             shortbow_xp         =83.3
-            class vale_totem:
-                build_xp        =156.1
-                decoration_xp   =619.8
-                totem_xp        = build_xp* 4 + decoration_xp * 4
-    # Index list for OSRS offical API            
+                 
 
-class eSkills(IntEnum):
-    OVERALL         = 0
-    ATTACK          = 1
-    DEFENCE         = 2
-    STRENGTH        = 3
-    HITPOINTS       = 4
-    RANGED          = 5
-    PRAYER          = 6
-    MAGIC           = 7
-    COOKING         = 8
-    WOODCUTTING     = 9
-    FLETCHING       = 10
-    FISHING         = 11
-    FIREMAKING      = 12
-    CRAFTING        = 13
-    SMITHING        = 14
-    MINING          = 15
-    HERBLORE        = 16
-    AGILITY         = 17
-    THIEVING        = 18
-    SLAYER          = 19
-    FARMING         = 20
-    RUNECRAFTING    = 21
-    HUNTER          = 22
-    CONSTRUCTION    = 23
-    SAILING         = 24
-
-class eSkillIndex(IntEnum):
-    RANK = 0
-    LEVEL = 1
-    XP = 2
-
-class eMode(IntEnum):
-    pass
 
